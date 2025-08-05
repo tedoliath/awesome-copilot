@@ -4,3 +4,7 @@ Copilot-Processing.md
 
 # macOS system files
 .DS_Store
+
+#SpecStory
+.specstory
+/.what-is-this.md
