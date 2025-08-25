@@ -8,3 +8,7 @@ Copilot-Processing.md
 #SpecStory
 .specstory
 /.what-is-this.md
+
+reports/
+
+.vscode/settings.json
