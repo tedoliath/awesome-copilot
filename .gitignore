@@ -4,3 +4,18 @@ Copilot-Processing.md
 
 # macOS system files
 .DS_Store
+<<<<<<< Updated upstream
+=======
+
+#SpecStory
+.specstory
+/.what-is-this.md
+
+reports/
+TerminalAutoApproveResearchTaskReports/
+awesome-copilot.code-workspace
+current-instructions/
+.gitignore
+.vscode/settings.json
+
+>>>>>>> Stashed changes
