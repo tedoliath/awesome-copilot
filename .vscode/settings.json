@@ -6,12 +6,8 @@
     "prompts": true
   },
   "chat.instructionsFilesLocations": {
-<<<<<<< Updated upstream
-    "instructions": true
-=======
     "instructions": false,
     "current-instructions": true
->>>>>>> Stashed changes
   },
   "files.eol": "\n",
   "files.insertFinalNewline": true,

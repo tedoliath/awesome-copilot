@@ -4,8 +4,6 @@ Copilot-Processing.md
 
 # macOS system files
 .DS_Store
-<<<<<<< Updated upstream
-=======
 
 #SpecStory
 .specstory
@@ -18,4 +16,3 @@ current-instructions/
 .gitignore
 .vscode/settings.json
 
->>>>>>> Stashed changes
