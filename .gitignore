@@ -15,5 +15,6 @@ awesome-copilot.code-workspace
 active-instructions/
 .gitignore
 .vscode/settings.json
+.vscode/extensions.json
 scripts/custom-scripts/
 
