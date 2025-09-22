@@ -12,7 +12,8 @@ Copilot-Processing.md
 reports/
 TerminalAutoApproveResearchTaskReports/
 awesome-copilot.code-workspace
-current-instructions/
+active-instructions/
 .gitignore
 .vscode/settings.json
+scripts/custom-scripts/
 
