@@ -1,13 +1,15 @@
 {
   "chat.modeFilesLocations": {
-    "chatmodes": true
+    "chatmodes": true,
+    "active-chatmodes": true
   },
   "chat.promptFilesLocations": {
-    "prompts": true
+    "prompts": true,
+    "active-prompts": true
   },
   "chat.instructionsFilesLocations": {
     "instructions": false,
-    "current-instructions": true
+    "active-instructions": true
   },
   "files.eol": "\n",
   "files.insertFinalNewline": true,

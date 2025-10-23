@@ -5,16 +5,22 @@ Copilot-Processing.md
 # macOS system files
 .DS_Store
 
+
+# Local VSCode changes
+
 #SpecStory
 .specstory
 /.what-is-this.md
 
-reports/
-TerminalAutoApproveResearchTaskReports/
-awesome-copilot.code-workspace
-active-instructions/
+# Changed Repo Files
 .gitignore
 .vscode/settings.json
 .vscode/extensions.json
+
+# Local Files and Folders
+reports/
+TerminalAutoApproveResearchTaskReports/
+awesome-copilot.code-workspace
 scripts/custom-scripts/
+
 
