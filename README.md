@@ -2,7 +2,7 @@
 
 [![Powered by Awesome Copilot](https://img.shields.io/badge/Powered_by-Awesome_Copilot-blue?logo=githubcopilot)](https://aka.ms/awesome-github-copilot)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-91-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-93-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A community created collection of custom agents, prompts, and instructions to supercharge your GitHub Copilot experience across different domains, languages, and use cases.
@@ -14,17 +14,16 @@ This repository provides a comprehensive toolkit for enhancing GitHub Copilot wi
 - **👉 [Awesome Agents](docs/README.agents.md)** - Specialized GitHub Copilot agents that integrate with MCP servers to provide enhanced capabilities for specific workflows and tools
 - **👉 [Awesome Prompts](docs/README.prompts.md)** - Focused, task-specific prompts for generating code, documentation, and solving specific problems
 - **👉 [Awesome Instructions](docs/README.instructions.md)** - Comprehensive coding standards and best practices that apply to specific file patterns or entire projects
-- **👉 [Awesome Chat Modes](docs/README.chatmodes.md)** - Specialized AI personas and conversation modes for different roles and contexts
 - **👉 [Awesome Collections](docs/README.collections.md)** - Curated collections of related prompts, instructions, and chat modes organized around specific themes and workflows
 
 ## 🌟 Featured Collections
 
-Discover our curated collections of prompts, instructions, and chat modes organized around specific themes and workflows.
+Discover our curated collections of prompts, instructions, and agents organized around specific themes and workflows.
 
 | Name | Description | Items | Tags |
 | ---- | ----------- | ----- | ---- |
 | [Awesome Copilot](collections/awesome-copilot.md) | Meta prompts that help you discover and generate curated GitHub Copilot chat modes, collections, instructions, prompts, and agents. | 6 items | github-copilot, discovery, meta, prompt-engineering, agents |
-| [Partners](collections/partners.md) | Custom agents that have been created by GitHub partners | 11 items | devops, security, database, cloud, infrastructure, observability, feature-flags, cicd, migration, performance |
+| [Partners](collections/partners.md) | Custom agents that have been created by GitHub partners | 20 items | devops, security, database, cloud, infrastructure, observability, feature-flags, cicd, migration, performance |
 
 
 ## MCP Server
@@ -73,10 +72,6 @@ Use the `/` command in GitHub Copilot Chat to access prompts:
 
 Instructions automatically apply to files based on their patterns and provide contextual guidance for coding standards, frameworks, and best practices.
 
-### 💭 Chat Modes
-
-Activate chat modes to get specialized assistance from AI personas tailored for specific roles like architects, DBAs, or security experts.
-
 ## 🎯 Why Use Awesome GitHub Copilot?
 
 - **Productivity**: Pre-built agents, prompts and instructions save time and provide consistent results.
@@ -104,7 +99,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 ```plaintext
 ├── prompts/          # Task-specific prompts (.prompt.md)
 ├── instructions/     # Coding standards and best practices (.instructions.md)
-├── chatmodes/        # AI personas and specialized modes (.chatmode.md)
+├── agents/           # AI personas and specialized modes (.agent.md)
 ├── collections/      # Curated collections of related items (.collection.yml)
 └── scripts/          # Utility scripts for maintenance
 ```
@@ -125,7 +120,7 @@ The customizations in this repository are sourced from and created by third-part
 
 ---
 
-**Ready to supercharge your coding experience?** Start exploring our [prompts](docs/README.prompts.md), [instructions](docs/README.instructions.md), and [chat modes](docs/README.chatmodes.md)!
+**Ready to supercharge your coding experience?** Start exploring our [prompts](docs/README.prompts.md), [instructions](docs/README.instructions.md), and [custom agents](docs/README.agents.md)!
 
 ## Contributors ✨
 
@@ -252,6 +247,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jeremiah-snee-openx"><img src="https://avatars.githubusercontent.com/u/113928685?v=4?s=100" width="100px;" alt="Jeremiah Snee"/><br /><sub><b>Jeremiah Snee</b></sub></a><br /><a href="https://github.com/github/awesome-copilot/commits?author=jeremiah-snee-openx" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/spectatora"><img src="https://avatars.githubusercontent.com/u/1385755?v=4?s=100" width="100px;" alt="spectatora"/><br /><sub><b>spectatora</b></sub></a><br /><a href="https://github.com/github/awesome-copilot/commits?author=spectatora" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Mike-Hanna"><img src="https://avatars.githubusercontent.com/u/50142889?v=4?s=100" width="100px;" alt="Michael"/><br /><sub><b>Michael</b></sub></a><br /><a href="https://github.com/github/awesome-copilot/commits?author=Mike-Hanna" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lechnerc77"><img src="https://avatars.githubusercontent.com/u/22294087?v=4?s=100" width="100px;" alt="Christian Lechner"/><br /><sub><b>Christian Lechner</b></sub></a><br /><a href="https://github.com/github/awesome-copilot/commits?author=lechnerc77" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://jan-v.nl"><img src="https://avatars.githubusercontent.com/u/462356?v=4?s=100" width="100px;" alt="Jan de Vries"/><br /><sub><b>Jan de Vries</b></sub></a><br /><a href="https://github.com/github/awesome-copilot/commits?author=Jandev" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>
