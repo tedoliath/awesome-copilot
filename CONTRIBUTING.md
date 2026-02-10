@@ -2,6 +2,31 @@
 
 Thank you for your interest in contributing to the Awesome GitHub Copilot repository! We welcome contributions from the community to help expand our collection of custom instructions and prompts.
 
+## Prerequisites
+
+### Windows Users: Enable Symlinks
+
+This repository uses symbolic links for plugins. On Windows, you need to enable symlink support before cloning:
+
+1. **Enable Developer Mode** (recommended):
+   - Open **Settings** → **Update & Security** → **For developers**
+   - Enable **Developer Mode**
+   - This allows creating symlinks without administrator privileges
+
+2. **Configure Git to use symlinks**:
+   ```bash
+   git config --global core.symlinks true
+   ```
+
+3. **Clone the repository** (after enabling the above):
+   ```bash
+   git clone https://github.com/github/awesome-copilot.git
+   ```
+
+> **Note:** If you cloned the repository before enabling symlinks, the symlinks will appear as plain text files containing the target path. You'll need to delete the local repository and re-clone after enabling symlink support.
+
+**Alternative for older Windows versions:** If Developer Mode is not available, you can run Git Bash as Administrator, or grant your user the "Create symbolic links" privilege via Local Security Policy (`secpol.msc` → Local Policies → User Rights Assignment → Create symbolic links).
+
 ## How to Contribute
 
 ### Adding Instructions
@@ -61,26 +86,25 @@ Your goal is to...
 - Include examples where helpful
 ```
 
-### Adding Chat Modes
+### Adding an Agent
 
-Chat modes are specialized configurations that transform GitHub Copilot Chat into domain-specific assistants or personas for particular development scenarios.
+Agents are specialized configurations that transform GitHub Copilot Chat into domain-specific assistants or personas for particular development scenarios.
 
-1. **Create your chat mode file**: Add a new `.agent.md` file in the `agents/` directory
+1. **Create your agent file**: Add a new `.agent.md` file in the `agents/` directory
 2. **Follow the naming convention**: Use descriptive, lowercase filenames with hyphens and the `.agent.md` extension (e.g., `react-performance-expert.agent.md`)
 3. **Include frontmatter**: Add metadata at the top of your file with required fields
-4. **Define the persona**: Create a clear identity and expertise area for the chat mode
-5. **Test your chat mode**: Ensure the chat mode provides helpful, accurate responses in its domain
+4. **Define the persona**: Create a clear identity and expertise area for the agent
+5. **Test your agent**: Ensure the agent provides helpful, accurate responses in its domain
 
-#### Example chat mode format
+#### Example agent format
 
 ```markdown
 ---
-description: 'Brief description of the chat mode and its purpose'
+description: 'Brief description of the agent and its purpose'
 model: 'gpt-5'
 tools: ['codebase', 'terminalCommand']
+name: 'My Agent Name'
 ---
-
-# Chat Mode Title
 
 You are an expert [domain/role] with deep knowledge in [specific areas].
 
@@ -114,7 +138,7 @@ Skills are self-contained folders in the `skills/` directory that include a `SKI
 
 ### Adding Collections
 
-Collections group related prompts, instructions, and chat modes around specific themes or workflows, making it easier for users to discover and adopt comprehensive toolkits.
+Collections group related prompts, instructions, agents, and skills around specific themes or workflows, making it easier for users to discover and adopt comprehensive toolkits.
 
 1. **Create your collection manifest**: Add a new `.collection.yml` file in the `collections/` directory
 2. **Follow the naming convention**: Use descriptive, lowercase filenames with hyphens (e.g., `python-web-development.collection.yml`)
@@ -142,17 +166,17 @@ items:
     kind: prompt
   - path: instructions/my-instructions.instructions.md
     kind: instruction
-  - path: agents/my-chatmode.agent.md
+  - path: agents/my-custom.agent.md
     kind: agent
     usage: |
      recommended # or "optional" if not essential to the workflow
 
-     This chat mode requires the following instructions/prompts/MCPs:
+     This agent requires the following instructions/prompts/MCPs:
       - Instruction 1
       - Prompt 1
       - MCP 1
 
-     This chat mode is ideal for...
+     This agent is ideal for...
       - Use case 1
       - Use case 2
     
@@ -186,6 +210,49 @@ For full example of usage checkout edge-ai tasks collection:
 - **Test combinations**: Ensure the items complement each other effectively
 - **Clear purpose**: The collection should solve a specific problem or workflow
 - **Validate before submitting**: Run `node validate-collections.js` to ensure your manifest is valid
+
+### Working with Plugins
+
+Plugins are installable packages automatically generated from collections. They contain symlinked agents, commands (prompts), and skills from the source collection.
+
+#### Creating a Plugin from a Collection
+
+When you create a new collection, you can generate a corresponding plugin:
+
+```bash
+# Migrate a collection to a new plugin (first time only)
+npm run plugin:migrate -- --collection <collection-id>
+```
+
+#### Updating Plugins After Collection Changes
+
+If you modify a collection (add/remove items, update metadata), refresh the corresponding plugin:
+
+```bash
+# Refresh a single plugin
+npm run plugin:refresh -- --collection <collection-id>
+
+# Refresh all existing plugins
+npm run plugin:refresh -- --all
+```
+
+#### Plugin Structure
+
+```plaintext
+plugins/<collection-id>/
+├── .github/plugin/plugin.json  # Plugin metadata (auto-generated)
+├── README.md                   # Plugin documentation (auto-generated)
+├── agents/                     # Symlinks to agent files (.md)
+├── commands/                   # Symlinks to prompt files (.md)
+└── skills/                     # Symlinks to skill folders
+```
+
+#### Plugin Guidelines
+
+- **Symlinks, not copies**: Plugin files are symlinks to the source files, avoiding duplication
+- **Instructions excluded**: Instructions are not currently supported in plugins
+- **Auto-generated content**: The `plugin.json` and `README.md` are generated from the collection metadata
+- **Keep plugins in sync**: After modifying a collection, run `plugin:refresh` to update the plugin
 
 ## Submitting Your Contribution
 
@@ -255,7 +322,7 @@ We welcome many kinds of contributions, including the custom categories below:
 | --- | --- | :---: |
 | **Instructions** | Custom instruction sets that guide GitHub Copilot behavior | 🧭 |
 | **Prompts** | Reusable or one-off prompts for GitHub Copilot | ⌨️ |
-| **Agents (Chat Modes)** | Defined GitHub Copilot roles or personalities | 🎭 |
+| **Agents** | Defined GitHub Copilot roles or personalities | 🎭 |
 | **Skills** | Specialized knowledge of a task for GitHub Copilot | 🧰 |
 | **Collections** | Curated bundles of related prompts, agents, or instructions | 🎁 |
 
